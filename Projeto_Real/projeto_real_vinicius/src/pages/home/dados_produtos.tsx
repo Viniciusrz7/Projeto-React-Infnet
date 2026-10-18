@@ -1,0 +1,72 @@
+export const dados_produtos = [
+  {
+    id: 1,
+    nome: "Echo Dot (4ª Geração) com Relógio",
+    fabricante: "Amazon",
+    preco: 499.00,
+    imagem: "https://lojaibyte.vteximg.com.br/arquivos/ids/206894-1200-1200/amazon-echo-dot-4-geracao-smart-speaker-com-relogio-e-alexa-branca-01.jpg"
+  },
+  {
+    id: 2,
+    nome: "Fire TV Stick",
+    fabricante: "Amazon",
+    preco: 379.00,
+    imagem: "https://mobileimages.lowes.com/productimages/fa9e8fe9-bd5d-4ee6-86fc-f0e8e255039a/75390511.jpeg"
+  },
+  {
+    id: 3,
+    nome: "Kindle 11ª Geração",
+    fabricante: "Amazon",
+    preco: 499.00,
+    imagem: "https://i.ebayimg.com/images/g/slcAAOSwmEtjlzOm/s-l1200.jpg"
+  },
+  {
+    id: 4,
+    nome: "Smart Lâmpada Wi-Fi",
+    fabricante: "Positivo Casa Inteligente",
+    preco: 47.99,
+    imagem: "https://positivocasainteligente.vteximg.com.br/arquivos/ids/155668-92-92/NovaSmartLampadaWifi.png?v=637275162885100000"
+  },
+  {
+    id: 5,
+    nome: "Câmera Inteligente Wi-Fi iM3 C",
+    fabricante: "Intelbras",
+    preco: 169.00,
+    imagem: "https://amperial.cdn.magazord.com.br/img/2023/03/produto/2756/fdgsfg.jpg"
+  },
+  {
+    id: 6,
+    nome: "Controle Universal Inteligente IZY Connect",
+    fabricante: "Intelbras",
+    preco: 129.00,
+    imagem: "https://elastobor.vtexassets.com/arquivos/ids/228097/SMART-CONTROLE-UNIVERSAL-INFRAVERMELHO-INTELBRAS-IZY-CONNECT.jpg"
+  },
+  {
+    id: 7,
+    nome: "Fechadura Digital de Embutir FDE-BC200",
+    fabricante: "Pado",
+    preco: 649.00,
+    imagem: "https://www.mercantilbeleski.com.br/media/tmp/webp/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/o/foto_2__jpeg.webp"
+  },
+  {
+    id: 8,
+    nome: "Robô Aspirador de Pó Wi-Fi Smart 500",
+    fabricante: "KaBuM! Smart",
+    preco: 899.00,
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_739637-MLA99962370775_112025-O.webp"
+  },
+  {
+    id: 9,
+    nome: "Smart Plug Tomada Wi-Fi 10A",
+    fabricante: "Geonav",
+    preco: 99.00,
+    imagem: "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/h/i/hitm10a1.jpg"
+  },
+  {
+    id: 10,
+    nome: "Interruptor Inteligente Touch Wi-Fi",
+    fabricante: "Sonoff",
+    preco: 149.90,
+    imagem: "https://www.proshop.de/Images/915x900/3277106_62ea5fa7719f.jpg"
+  }
+];
