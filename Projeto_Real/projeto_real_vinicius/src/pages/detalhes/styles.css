@@ -1,0 +1,106 @@
+.detalhes-content {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.detalhes-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.detalhes-carregando {
+    text-align: center;
+    color: #6b6b6b;
+}
+
+.detalhes-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    border: 2px solid #e9e9e9;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    text-align: center;
+}
+
+.image {
+    width: 300px;
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: rgb(249, 244, 244);
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+.detalhes-nome {
+    font-size: 1.25rem;
+}
+
+.detalhes-fabricante {
+    font-size: 0.9rem;
+    color: #6b6b6b;
+}
+
+.detalhes-preco {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.detalhes-edit {
+    color: #000;
+    position: relative;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.detalhes-delete {
+    color:red;
+    position: relative;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.modal-titulo {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-botao {
+    min-width: 90px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.modal-botao:hover {
+    filter: brightness(0.9);
+}
+
+.modal-botao-sim {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+.modal-botao-nao {
+    background-color: #e9e9e9;
+    color: #000;
+}

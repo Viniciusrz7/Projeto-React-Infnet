@@ -1,10 +1,8 @@
 import "./styles.css"
-
 import { useNavigate } from "react-router"
-
-
 interface ProdutoProps {
     product: {
+        "id": number,   
         "nome": string,
         "fabricante": string,
         "preco": number,
@@ -14,11 +12,11 @@ interface ProdutoProps {
 
 export default function Produto({ product }: ProdutoProps) {
 
-    const {  nome, fabricante, preco, imagem } = product;
+    const { nome, fabricante, preco, imagem, id } = product;
     const navigate = useNavigate();
 
     function onNavigate() {
-        navigate("/produto")
+        navigate(`/produto/${id}`)
     }
 
     return (
