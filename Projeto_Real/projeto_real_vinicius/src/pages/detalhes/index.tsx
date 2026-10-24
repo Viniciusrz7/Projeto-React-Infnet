@@ -13,7 +13,6 @@ Modal.setAppElement('#root')
 export default function Detalhes() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false)
-
     const params = useParams()
 
     async function getProdutoDetalhe() {
@@ -32,8 +31,8 @@ export default function Detalhes() {
     return (
         <Container>
             <div className="detalhes-content">
-                <FiEdit className="detalhes-edit" size={30} />
-                <FiTrash className="detalhes-delete" size={30} onClick={openModal} />
+                <FiEdit className="detalhes-edit"/>
+                <FiTrash className="detalhes-delete" onClick={openModal} />
                 <h1 className="detalhes-titulo">Detalhes do produto {params.id}</h1>
                 {query.isFetching ? <p className="detalhes-carregando">Carregando detalhes do produto</p> : (
                     <div className="detalhes-produto">

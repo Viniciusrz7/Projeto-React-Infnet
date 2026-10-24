@@ -47,12 +47,14 @@
 }
 
 .detalhes-preco {
+    size: 30px;
     font-size: 1.85rem;
     font-weight: 700;
     margin-top: 2px;
 }
 
 .detalhes-edit {
+    size: 30px;
     color: #000;
     position: relative;
     top: 20px;
