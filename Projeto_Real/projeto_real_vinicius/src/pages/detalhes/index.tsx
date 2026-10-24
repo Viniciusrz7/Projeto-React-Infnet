@@ -8,17 +8,6 @@ import { FiEdit, FiTrash } from "react-icons/fi"
 import Modal from "react-modal"
 import { useState } from "react"
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-    }
-}
-
 Modal.setAppElement('#root')
 
 export default function Detalhes() {
@@ -55,7 +44,7 @@ export default function Detalhes() {
                     </div>
                 )}
             </div>
-            <Modal onRequestClose={closeModal} isOpen={modalIsOpen} style={customStyles}>
+            <Modal onRequestClose={closeModal} isOpen={modalIsOpen} className="modal-content">
                 <h3 className="modal-titulo">Tem certeza que deseja excluir este produto?</h3>
                 <div className="modal-botoes">
                     <button className="modal-botao modal-botao-sim" onClick={closeModal}>Sim</button>
