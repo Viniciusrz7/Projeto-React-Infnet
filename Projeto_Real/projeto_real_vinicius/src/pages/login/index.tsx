@@ -17,7 +17,11 @@ export default function login() {
 
     async function authLogin() {
 
-        const response = await axios.post<Promise<ResponseAuth>>('http://localhost:3001/auth/login', { email, password })
+        const response = await axios.post<ResponseAuth>('http://localhost:3001/auth/login', { email, password }, {
+            validateStatus: function (status) {
+                return status < 500
+            }
+        })
 
         if (response.status !== 200) {
             alert('usuario ou senha incorretos')

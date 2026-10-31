@@ -3,6 +3,6 @@
         "id": 1,
         "nome": "Vinicius",
         "email": "vinicius@teste.com",
-        "password": "123456"
+        "passwordHash": "$2b$10$NCE8TraNyCdPzvOfkLVNzOLuA3GYm9Mv53IxrmE6.lUqOjNyh7mca"
     }
 ]
