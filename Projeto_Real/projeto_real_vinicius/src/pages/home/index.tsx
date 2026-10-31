@@ -1,9 +1,10 @@
 import Container from "../../templates/container"
 import Produto from "../../components/product"
 import "./styles.css"
-import axios from "axios"
 import { useQuery } from "@tanstack/react-query"
 import type { ProdutoResponse } from "../home/types"
+import { api } from "../../service/api"
+
 interface ListaProdutosResponse {
     produtos: Array<ProdutoResponse>
 }
@@ -11,12 +12,10 @@ interface ListaProdutosResponse {
 export default function Home() {
 
     async function getProdutos() {
-        const response = await axios.get<ListaProdutosResponse>('http://localhost:3001/public/produtos')
-        return response.data
-
+        return (await api.get<ListaProdutosResponse>('/produtos')).data
     }
 
-    const query = useQuery({ queryKey: ['produtos'], queryFn: getProdutos, staleTime: 1000 * 60 * 5 })
+    const query = useQuery({ queryKey: ['produtos'], queryFn: getProdutos, staleTime: 1000 * 60 * 5, retry: false, refetchOnMount: 'always' })
 
     return (
         <div>
