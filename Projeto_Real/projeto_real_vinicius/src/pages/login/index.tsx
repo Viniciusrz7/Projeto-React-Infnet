@@ -2,6 +2,7 @@ import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import axios from 'axios'
+import { USER_KEY } from '../../utils/storageKeys'
 
 export interface ResponseAuth {
     "token": string;
@@ -23,7 +24,7 @@ export default function login() {
             return;
         }
 
-        localStorage.setItem('@unyproducts_user_data', JSON.stringify(response.data))
+        localStorage.setItem(USER_KEY,JSON.stringify(response.data))
         navigate("/home")
     }
 

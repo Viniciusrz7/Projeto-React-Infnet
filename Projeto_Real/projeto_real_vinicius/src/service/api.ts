@@ -1,9 +1,10 @@
 import axios from "axios"
 import type { ResponseAuth } from "../pages/login"
+import { USER_KEY } from "../utils/storageKeys"
 
 export const api = axios.create({ baseURL: 'http://localhost:3001' })
 
-const userData = localStorage.getItem('@unyproducts_user_data')
+const userData = localStorage.getItem(USER_KEY)
 let token;
 
 if (userData) {
