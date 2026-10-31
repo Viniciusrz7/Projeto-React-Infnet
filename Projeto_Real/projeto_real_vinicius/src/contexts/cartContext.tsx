@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 import { useState } from "react";
 import { CART_KEY } from "../utils/storageKeys";
 
