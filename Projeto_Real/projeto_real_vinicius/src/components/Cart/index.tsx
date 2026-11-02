@@ -1,19 +1,21 @@
 import './styles.css'
-import { useContext } from 'react';
-import { CartContextInstance } from '../../contexts/cartContext';
+//import { useContext } from 'react';
+//import { CartContextInstance } from '../../contexts/cartContext';
+import { useCart } from "../../hooks/useCart";
 
+export default function Cart() {
+    //  const { items, clearCart } = useContext(CartContextInstance);
 
-export default function Cart(){
-    const { items, clearCart } = useContext(CartContextInstance);
-    return(
+    const { items, clearCart } = useCart();
+    return (
         <div className="cart">
-            <button  className="clear-cart-button" onClick={clearCart}>Limpar Carrinho</button>
+            <button className="clear-cart-button" onClick={clearCart}>Limpar Carrinho</button>
             {items.length === 0 ? (
                 <p className='empty-cart-message'>O carrinho está vazio</p>
             ) : (
                 <ul>
-                    {items.map((item) => (
-                        <li key={item.id}>
+                    {items.map((item, index) => (
+                        <li key={index}>
                             <img src={item.imagem} alt={item.nome} />
                             <div>
                                 <h4>{item.nome}</h4>

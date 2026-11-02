@@ -1,7 +1,8 @@
 import "./styles.css"
 import { useNavigate } from "react-router"
-import { useContext } from "react"
-import { CartContextInstance } from "../../contexts/cartContext"
+//import { useContext } from "react"
+//import { CartContextInstance } from "../../contexts/cartContext"
+import {useCart} from "../../hooks/useCart"
 interface ProdutoProps {
     product: { "id": number, "nome": string, "fabricante": string, "preco": number, "imagem": string }
 }
@@ -9,8 +10,10 @@ interface ProdutoProps {
 export default function Produto({ product }: ProdutoProps) {
 
     const { nome, fabricante, preco, imagem, id } = product;
-    const { addToCart } = useContext(CartContextInstance)
+    // const { addToCart } = useContext(CartContextInstance)
     const navigate = useNavigate();
+
+    const { addToCart } = useCart()
 
     function onNavigate() {
         navigate(`/produto/${id}`)

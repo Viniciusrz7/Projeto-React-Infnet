@@ -1,2 +1,2 @@
-export const USER_KEY = "@unyproducts_user_data"
+export const AUTH_KEY = "@auth"
 export const CART_KEY = "@cart"

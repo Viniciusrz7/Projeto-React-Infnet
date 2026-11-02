@@ -1,29 +1,26 @@
 import axios from "axios"
-import type { ResponseAuth } from "../pages/login"
-import { USER_KEY } from "../utils/storageKeys"
+import { useAuth } from "../hooks/useAuth"
 
 export const api = axios.create({ baseURL: 'http://localhost:3001' })
 
-api.interceptors.request.use(function (config) {
-    const userData = localStorage.getItem(USER_KEY)
+const { token } = useAuth.getState()
 
-    if (userData) {
-        const dataJSON: ResponseAuth = JSON.parse(userData)
-        config.headers.Authorization = `Bearer ${dataJSON.token}`
-    }
+if (!token && window.location.pathname !== "/") {
+   alert("Token não encontrado. Faça login novamente.")
+   window.location.href = "/"
+}
 
-    return config
-}, function (error) {
-    return Promise.reject(error)
+api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+useAuth.subscribe((state) => {
+   api.defaults.headers.common['Authorization'] = `Bearer ${state.token}`;
 })
 
-api.interceptors.response.use(function (response) {
-    return response
-}, function (error) {
-    if (error.response?.status === 401) {
-        localStorage.removeItem(USER_KEY)
-        window.location.href = "/"
-    }
+api.interceptors.response.use((response) => response, (error) => {
+   if (error.response?.status === 401) {
+      useAuth.getState().clearUser()
+      window.location.href = "/"
+   }
 
-    return Promise.reject(error)
+   return Promise.reject(error)
 })

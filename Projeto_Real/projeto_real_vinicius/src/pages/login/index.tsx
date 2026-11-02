@@ -2,7 +2,7 @@ import './styles.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import axios from 'axios'
-import { USER_KEY } from '../../utils/storageKeys'
+import {useAuth} from "../../hooks/useAuth";
 
 export interface ResponseAuth {
     "token": string;
@@ -14,6 +14,8 @@ export default function login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+
+    const {setAuthData} = useAuth()
 
     async function authLogin() {
 
@@ -28,7 +30,8 @@ export default function login() {
             return;
         }
 
-        localStorage.setItem(USER_KEY,JSON.stringify(response.data))
+        //localStorage.setItem(USER_KEY,JSON.stringify(response.data))
+        setAuthData(response.data)
         navigate("/home")
     }
 

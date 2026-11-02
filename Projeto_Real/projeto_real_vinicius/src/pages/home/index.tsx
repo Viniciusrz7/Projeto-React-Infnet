@@ -4,12 +4,15 @@ import "./styles.css"
 import { useQuery } from "@tanstack/react-query"
 import type { ProdutoResponse } from "../home/types"
 import { api } from "../../service/api"
+import { useAuth } from "../../hooks/useAuth"
 
 interface ListaProdutosResponse {
     produtos: Array<ProdutoResponse>
 }
 
 export default function Home() {
+
+    const { usuario } = useAuth();
 
     async function getProdutos() {
         return (await api.get<ListaProdutosResponse>('/produtos')).data
@@ -21,6 +24,8 @@ export default function Home() {
         <div>
             <Container>
                 <h1>Produtos</h1>
+                <h2>Olá, {usuario.nome}</h2>
+                <h3>Email: {usuario.email}</h3>
                 <div className="home-content-list">
                     {query.isFetching ? (
                         <p>Carregando...</p>
