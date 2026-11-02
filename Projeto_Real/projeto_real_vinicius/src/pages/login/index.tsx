@@ -9,7 +9,7 @@ export interface ResponseAuth {
     "usuario": { id: number, nome: string, email: string }
 }
 
-export default function login() {
+export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
